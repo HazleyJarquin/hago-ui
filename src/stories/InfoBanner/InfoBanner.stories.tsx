@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { StyleSheet, View } from "react-native";
-
 import React from "react";
-import { Button } from "../../components/Button";
+import { InfoBanner } from "../../components/InfoBanner";
+import { Text } from "react-native-paper";
 
 const meta = {
-  title: "Components/Button",
-  component: Button,
+  title: "Components/InfoBanner",
+  component: InfoBanner,
   decorators: [
     (Story) => (
       <View style={styles.centered}>
@@ -14,7 +14,7 @@ const meta = {
       </View>
     ),
   ],
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof InfoBanner>;
 
 export default meta;
 
@@ -22,11 +22,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Content: Story = {
   args: {
-    text: "Press me",
-    onPress: () => alert("Pressed"),
+    children: <Text>Hi</Text>,
     variant: "secondary",
-    children: undefined,
-    buttonStyle: { width: 100 },
+    infoBannerStyle: { padding: 10 },
   },
   argTypes: {
     variant: {

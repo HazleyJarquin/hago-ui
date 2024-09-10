@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { StyleSheet, View } from "react-native";
-
 import React from "react";
-import { Button } from "../../components/Button";
+import { ModalExample } from "./ModalExample";
 
 const meta = {
-  title: "Components/Button",
-  component: Button,
+  title: "Components/Modal",
+  component: ModalExample,
   decorators: [
     (Story) => (
       <View style={styles.centered}>
@@ -14,7 +13,7 @@ const meta = {
       </View>
     ),
   ],
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof ModalExample>;
 
 export default meta;
 
@@ -22,17 +21,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Content: Story = {
   args: {
-    text: "Press me",
-    onPress: () => alert("Pressed"),
-    variant: "secondary",
-    children: undefined,
-    buttonStyle: { width: 100 },
-  },
-  argTypes: {
-    variant: {
-      control: { type: "select" },
-      options: ["primary", "secondary", "tertiary"],
-    },
+    title: "Modal Title",
   },
 };
 

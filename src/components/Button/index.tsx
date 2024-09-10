@@ -13,14 +13,13 @@ export type Props = ButtonProps & {
 export const Button = ({
   onPress,
   text,
-  variant = "primary",
+  variant,
   buttonStyle,
   textStyle,
   ...props
 }: Props) => {
   const backgroundColor =
     variant === "primary" ? colors.primary["600"] : "none";
-
   const textColor = variant === "primary" ? "#fff" : colors.text["500"];
   const borderWidth = variant === "secondary" ? 1 : 0;
   const borderColor = variant === "secondary" ? colors.border["200"] : "none";
